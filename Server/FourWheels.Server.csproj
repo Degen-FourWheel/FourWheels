@@ -18,7 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Client\FourWheels.Client.csproj" />
     <ProjectReference Include="..\FourWheel.Domain\FourWheel.Domain.csproj" />
-    <ProjectReference Include="..\Shared\FourWheels.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

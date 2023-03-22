@@ -19,7 +19,7 @@ namespace FourWheel.Domain.Data
 
         public DbSet<Customer> Customers { get; set; }
         public IConfiguration Configuration { get; private set; }
-        public FourWheelsDBContext(DbContextOptions<FourWheelsDBContext> options) : base(options)
+        public FourWheelsDBContext()
         {
             Configuration = new ConfigurationBuilder()
                 .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
