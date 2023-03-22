@@ -9,11 +9,15 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Client\FourWheels.Client.csproj" />
-    <ProjectReference Include="..\Shared\FourWheels.Shared.csproj" />
+    <ProjectReference Include="..\FourWheel.Domain\FourWheel.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
