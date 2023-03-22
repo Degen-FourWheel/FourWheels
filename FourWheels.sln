@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourWheel.Domain", "FourWhe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourWheels.Services", "FourWheels.Services\FourWheels.Services.csproj", "{A75E52C1-2FFA-49BB-9F9C-1FE32E0A3C87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourWheel.Web", "FourWheel.Web\FourWheel.Web.csproj", "{F1FD5DD1-83B2-485F-8008-6BAE46E577EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FourWheel.Web", "FourWheel.Web\FourWheel.Web.csproj", "{F1FD5DD1-83B2-485F-8008-6BAE46E577EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
