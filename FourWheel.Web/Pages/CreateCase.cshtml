@@ -1,4 +1,11 @@
 ﻿@page
-
+@model FourWheel.Web.Pages.CreateCaseModel
 @{
+}
+
+<component type="typeof(FourWheel.Web.Components.CreateCase)" render-mode="Server"></component>
+
+@section Scripts{
+<!-- Allows the blazor component to run -->
+<script src="_framework/blazor.server.js"></script>
 }
