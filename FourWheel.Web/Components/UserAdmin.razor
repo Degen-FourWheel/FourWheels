@@ -1,0 +1,41 @@
+﻿@using FourWheel.Domain.Models;
+@inject NavigationManager NavManager
+@inject FourWheels.Services.Interfaces.IUserService _UserContext
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Zip</th>
+            <th scope="col">City</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone nr.</th>
+            <th scope="col">Cars</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in customers)
+        {
+            <tr>
+                <td>@item.CustomerId</td>
+                <td>@item.CustomerFullName</td>
+                <td>@item.ZipCode</td>
+                <td>@item.City</td>
+                <td>@item.Address</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Cars.Count()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Customer> customers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+}

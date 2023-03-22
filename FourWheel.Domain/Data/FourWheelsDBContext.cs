@@ -19,14 +19,8 @@ namespace FourWheel.Domain.Data
 
         public DbSet<Customer> Customers { get; set; }
         public IConfiguration Configuration { get; private set; }
-        public FourWheelsDBContext()
-        {
-            Configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
 
-        }
+        public FourWheelsDBContext(DbContextOptions<FourWheelsDBContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
