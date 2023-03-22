@@ -22,6 +22,8 @@ namespace FourWheel.Web
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            builder.Services.AddServerSideBlazor();
+
             builder.Services.AddScoped<ICRUDService, CRUDService>();
             builder.Services.AddScoped<IUserService, UserService>();
 
@@ -50,7 +52,11 @@ namespace FourWheel.Web
 
             app.UseAuthorization();
 
-            app.MapRazorPages();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
+            });
 
             app.Run();
         }

@@ -1,0 +1,11 @@
+﻿@page
+@model FourWheel.Web.Pages.AdminUserModel
+@{
+    ViewData["Title"] = "Users Administration";
+}
+<component type="typeof(FourWheel.Web.Components.AdminUser)" render-mode="Server" />
+
+@section Scripts{
+    <!-- Allows the blazor component to run -->
+    <script src="_framework/blazor.server.js"></script>
+}
