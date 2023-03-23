@@ -24,7 +24,7 @@
         <InputSelect id="customer" class="form-control" @bind-Value="@service.Customer">
             @foreach (var customer in customers)
             {
-                <option value="@customer">@customer.CustomerFullName</option>
+                <option value="@customer.CustomerId">@customer.CustomerFullName</option>
             }
         </InputSelect>
     </div>
