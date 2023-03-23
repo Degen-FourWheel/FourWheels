@@ -10,9 +10,10 @@
         public string City { get; set; }
         public int ZipCode { get; set; }
         public string PhoneNumber { get; set; }
+        public int CaseId { get; set; }
 
         public List<Car> Cars { get; set; }
-
+        public List<Case>? Service { get; set; }
         public Customer()
         {
             CustomerFullName = $"{CustomerFirstName} {CustomerLastName}";

@@ -26,6 +26,7 @@ namespace FourWheel.Web
 
             builder.Services.AddScoped<ICRUDService, CRUDService>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IServiceService, ServiceService>();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

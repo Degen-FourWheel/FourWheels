@@ -1,0 +1,46 @@
+﻿@page "/services"
+@using FourWheel.Domain.Models;
+@inject FourWheels.Services.Interfaces.IServiceService _ServiceContext
+@inject FourWheels.Services.Interfaces.ICRUDService _CRUDService
+
+<h1>Services</h1>
+
+@if (services == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var service in services)
+            {
+                <tr>
+                    <td>@service.Description</td>
+                    <td>@service.Customer.CustomerFullName</td>
+                    <td>@service.Status</td>
+                    <td>@service.StartTime.ToShortDateString()</td>
+                    <td>@service.EndTime.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Case> services;
+
+    protected override async Task OnInitializedAsync()
+    {
+        services = await _ServiceContext.GetAllServices();
+    }
+}

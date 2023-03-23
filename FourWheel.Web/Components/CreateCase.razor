@@ -1,8 +1,60 @@
-﻿<h3>CreateCase</h3>
+﻿@using FourWheel.Domain.Models;
+@inject NavigationManager NavManager
+@using Microsoft.AspNetCore.Components.Forms;
+@inject FourWheels.Services.Interfaces.IServiceService _ServiceContext
+@inject FourWheels.Services.Interfaces.ICRUDService _CRUDService
+
+<h3>CreateCase</h3>
 
 
 
+
+
+<EditForm Model="@service" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <InputTextArea id="description" class="form-control" @bind-Value="@service.Description" />
+    </div>
+
+    <div class="form-group">
+        <label for="customer">Customer:</label>
+        <InputSelect id="customer" class="form-control" @bind-Value="@service.Customer">
+            @foreach (var customer in customers)
+            {
+                <option value="@customer">@customer.CustomerFullName</option>
+            }
+        </InputSelect>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <InputSelect id="status" class="form-control" @bind-Value="@service.Status">
+            <option value="Åben">Åben</option>
+            <option value="Lukket">Lukket</option>
+            <option value="ventende">Ventende</option>
+        </InputSelect>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
 
 @code {
+    private Case service = new Case();
+    private List<Customer> customers = new List<Customer>();
 
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await _ServiceContext.GetAllCustomers();
+    }
+
+    private void HandleValidSubmit()
+    {
+        // Handle form submission here
+    }
 }
+
+
+
